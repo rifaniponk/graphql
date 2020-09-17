@@ -295,6 +295,17 @@ func (req *Request) Vars() map[string]interface{} {
 	return req.vars
 }
 
+// Q ...
+func (req *Request) Q() string {
+	return req.q
+}
+
+// VarsJSON ...
+func (req *Request) VarsJSON() string {
+	s, _ := json.Marshal(req.vars)
+	return string(s)
+}
+
 // Files gets the files in this request.
 func (req *Request) Files() []File {
 	return req.files
